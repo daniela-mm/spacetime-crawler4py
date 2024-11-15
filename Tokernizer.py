@@ -36,13 +36,13 @@ def tokenize():
                     else:
                         #Upon an invalid character,
                         #If the sequece is not empty, yield the sequence
-                        if valid:
-                            yield valid  
+                        if len(valid) >= 3:
+                            yield valid
                             #Reset the sequence to empty
                             valid = ""
                 #If there is a valid sequence, make sure to yield this value as well
-                if valid:
-                    yield valid    
+                if len(valid) >= 3:
+                    yield valid
     except Exception as e:
         print(f"An error occurred: {e}")
 

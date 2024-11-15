@@ -14,14 +14,7 @@ def scraper(url, resp):
     '''
     # Extract links from the response
     links = extract_next_links(url, resp)
-    
-    # Filter valid links and store unique URLs and their lengths
-    valid_links = []
-    for link in links:
-        if is_valid(link):
-            valid_links.append(link)
-    store_unique_urls_and_lengths(link)  # Store unique link details
-    return valid_links
+    return [link for link in links if is_valid(link)]
 
 def extract_next_links(url, resp):
     #print(f"Checking this link {url}")
@@ -52,33 +45,18 @@ def extract_next_links(url, resp):
                 return url_list
             #STORE THE ORIGINAL TEXT
             textSoup = soup.get_text().lower()
-
-            #REMOVE THE NAVIGATION BAR AND FOOTER OF THE SITES
-            # Helps avoid pages with little addional info and helps gather more accurate data. 
-            # Remove <nav> elements
-            for nav in soup.find_all('nav'):
-                nav.decompose()
-            # Remove <footer> elements
-            for footer in soup.find_all('footer'):
-                footer.decompose()
-            # Remove <div> elements with common navigation/footer classes
-            for div in soup.find_all('div', class_=['navbar', 'footer', 'header', 'nav', 'site-footer', 'site-header']):
-                div.decompose()
-            pureSoup = soup.get_text().lower()
-
-            print(f"COMPARING {textSoup == pureSoup}\n{textSoup}\n{pureSoup}")
             #Check if this page has any calendar-related traps. 
-            if (check_calendar(pureSoup)):
+            if (check_calendar(textSoup)):
                 insert_avoid(url)
                 return url_list
             #Check if this page is dead/low info
             print(f"searching {url} for dead content. \n")
-            if (dead_site(pureSoup)):
+            if (dead_site(textSoup)):
                 insert_avoid(url)
                 #print(f"Dead/low content {url}\n")
                 return url_list
             #If not a dead site, analyze the contents of the file:
-            write_site(text, url)
+            write_site(textSoup, url)
             # Print out all the links found. 
             for link in soup.find_all('a'):
                 #print(f"Found a link! {link.get('href')}")
@@ -100,7 +78,7 @@ def extract_next_links(url, resp):
         
     #Check the CONTENT of the html text for any calendars:
     # Return a list with the hyperlinks (as strings) scrapped from resp.raw_response.content
-    #print(f"URLS FOUND IN {url} {url_list}")
+    print(f"URLS FOUND IN {url} {url_list}")
     return url_list
 
 def is_valid(url):
@@ -113,7 +91,7 @@ def is_valid(url):
         subdomain = ''
         #DMM:  Defragment the URL before further processing: 
         if parsed.scheme not in set(["http", "https"]):
-            insert_avoid(url)
+            #insert_avoid(url)
             return False
 
         #Pattern to check url for dates
@@ -132,11 +110,11 @@ def is_valid(url):
         if re.match(r"^([a-z0-9_-]+\.)*(today.uci.edu)$", parsed.netloc.lower()):
             #Check that the path is  /department/information_computer_sciences/
             if( parsed.path.lower() != "/department/information_computer_sciences/"):
-                insert_avoid(url)
+                #insert_avoid(url)
                 return False
         if not re.match(r"^([a-z0-9_-]+\.)*(ics\.uci\.edu|cs\.uci\.edu|informatics\.uci\.edu|stat\.uci\.edu)$", parsed.netloc.lower()):
             #print(f"{parsed} is NOT a VALID url\n")
-            insert_avoid(url)
+            #insert_avoid(url)
             return False
         #if ('events' in parsed.path.lower() or 'explore' in parsed.path.lower()):
             #return False
@@ -151,7 +129,7 @@ def is_valid(url):
         #Avoid any login buttons. 
         if parsed.query: 
             if parse_qs(parsed.query).get("action"):
-                insert_avoid(url)
+                #insert_avoid(url)
                 return False 
             '''
             if re.match(r"page_id=([^&]*)", parsed.query.lower()):
@@ -181,12 +159,11 @@ def is_valid(url):
         #If the url contains a fragment and we have already gone to the 
         #url and added it to unique url list, return False to avoid traps.
         if(parsed.fragment and insert_unique(parsed)):
-            insert_avoid(url)
+            #insert_avoid(url)
             return False
         #If there is no fragment, just add it to the unique list. 
-        else:
-            insert_unique(parsed)
-
+        store_unique_urls_and_lengths()
+        insert_unique(parsed)
         return True
         '''
         

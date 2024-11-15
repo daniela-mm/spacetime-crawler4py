@@ -1,0 +1,124 @@
+Number of Unique Pages: 2798
+---------------------------------------------------------------
+Longest Page: http://www.ics.uci.edu/~shantas/publications/19-obscure_secret-sharing_shantanu-sharma_vldb.ppsx
+Number of words: 183586
+---------------------------------------------------------------
+Top 50 Tokens: 
+data, 2018
+utu, 1464
+uuut, 1446
+uuu, 1377
+science, 1309
+learning, 719
+slides, 518
+xml, 486
+rels, 456
+bren, 410
+ebq, 409
+qde, 401
+bqqd, 390
+ppt, 364
+media, 251
+ddd, 243
+career, 225
+hhh, 221
+5uuu, 206
+xmlpk, 200
+png, 197
+relspk, 161
+days, 151
+post, 134
+hall, 126
+bbb, 124
+ppp, 115
+security, 114
+xml, 109
+bpk, 108
+ppt, 101
+2011, 100
+200, 100
+000, 97
+ihdr, 97
+pngpk, 97
+media, 93
+rels, 92
+slides, 85
+members, 82
+answer, 78
+dbh, 76
+4011, 71
+png, 65
+women, 65
+qqq, 61
+128, 54
+218, 54
+cgo, 53
+113, 51
+
+------------------------------------------------------------------
+The Number of Subdomains is: 63 
+
+accessibility.ics.uci.edu, 2
+acoi.ics.uci.edu, 110
+asterix.ics.uci.edu, 4
+auge.ics.uci.edu, 3
+cbcl.ics.uci.edu, 3
+cert.ics.uci.edu, 3
+cgvw.ics.uci.edu, 2
+chenli.ics.uci.edu, 3
+cloudberry.ics.uci.edu, 64
+cml.ics.uci.edu, 77
+code.ics.uci.edu, 16
+coronavirustwittermap.ics.uci.edu, 2
+create.ics.uci.edu, 2
+cs.ics.uci.edu, 3
+cs.uci.edu, 2
+cyberclub.ics.uci.edu, 2
+dblp.ics.uci.edu, 3
+dgillen.ics.uci.edu, 9
+ds4all.ics.uci.edu, 2
+edgelab.ics.uci.edu, 8
+flamingo.ics.uci.edu, 8
+fr.ics.uci.edu, 5
+futurehealth.ics.uci.edu, 4
+grape.ics.uci.edu, 5
+hack.ics.uci.edu, 2
+hai.ics.uci.edu, 2
+hpi.ics.uci.edu, 7
+i-sensorium.ics.uci.edu, 2
+ics.uci.edu, 26
+ipubmed.ics.uci.edu, 3
+isg.ics.uci.edu, 87
+luci.ics.uci.edu, 2
+mailman.ics.uci.edu, 5
+mapgrid.ics.uci.edu, 2
+mcs.ics.uci.edu, 4
+mdogucu.ics.uci.edu, 3
+mds.ics.uci.edu, 35
+mhcid.ics.uci.edu, 20
+mse.ics.uci.edu, 2
+mswe.ics.uci.edu, 4
+nalini.ics.uci.edu, 15
+ngs.ics.uci.edu, 1692
+psearch.ics.uci.edu, 3
+sherlock.ics.uci.edu, 3
+sprout.ics.uci.edu, 2
+stat.uci.edu, 2
+statconsulting.ics.uci.edu, 3
+summeracademy.ics.uci.edu, 8
+tastier.ics.uci.edu, 2
+tippersweb.ics.uci.edu, 3
+transformativeplay.ics.uci.edu, 3
+unite.ics.uci.edu, 12
+vision.ics.uci.edu, 4
+wics.ics.uci.edu, 3
+www-db.ics.uci.edu, 25
+www.cert.ics.uci.edu, 2
+www.cs.uci.edu, 12
+www.ics.uci.edu, 221
+www.informatics.uci.edu, 86
+www.isg.ics.uci.edu, 1
+www.mds.ics.uci.edu, 2
+www.stat.uci.edu, 139
+xtune.ics.uci.edu, 7
+
